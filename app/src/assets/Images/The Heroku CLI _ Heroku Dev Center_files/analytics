@@ -1,0 +1,28 @@
+
+function piResponse() {
+		piSetCookie('visitor_id36622', '499099333', 3650);
+			piSetCookie('visitor_id36622-hash', 'd733c24acecbcba2dbadcab7dc10a4766e20b8b0b4e936eff191648ca9428332a9bc7087b93665e23b0a8fdee97adb5684f46640', 3650);
+		
+		if (document.location.protocol != "https:" || (document.location.protocol == "https:" && true)) {
+		var analytics_link = document.location.protocol + "//" + "hello.heroku.com/analytics?";
+		pi.tracker.visitor_id='499099333';
+
+				pi.tracker.visitor_id_sign='d733c24acecbcba2dbadcab7dc10a4766e20b8b0b4e936eff191648ca9428332a9bc7087b93665e23b0a8fdee97adb5684f46640';
+		
+		var variables = 'conly=true';
+		for (property in pi.tracker) {
+					variables += "&" + property + "=" + encodeURIComponent(pi.tracker[property]);
+				}
+		var headID = document.getElementsByTagName("head")[0];
+		piScriptObj[piScriptNum] = document.createElement('script');
+		piScriptObj[piScriptNum].type = 'text/javascript';
+		piScriptObj[piScriptNum].src = analytics_link + variables;
+		headID.appendChild(piScriptObj[piScriptNum]);
+		piScriptObj[piScriptNum].onload = function() { return; }
+	}
+	}
+piResponse();
+
+
+
+
